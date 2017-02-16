@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'austin_crime'
+
+AustinCrime::CLI.new.call
