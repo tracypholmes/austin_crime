@@ -7,6 +7,7 @@ class AustinCrime::CLI
     puts "Welcome to Austin Crime Search!"
     list_types
     menu
+    cya
   end
 
     def list_types
@@ -20,9 +21,11 @@ class AustinCrime::CLI
     end
 
     def menu
-      puts "Please enter the number of the crime type for more information. "
+      puts "Please enter the number of the crime type for more information, or enter 'list' to see your list of options. "
       puts "You may also enter 'q' to Quit."
-      input = gets.strip
+      input = nil
+      while input != "exit"
+        input = gets.strip.downcase
       case input
       when "1"
         puts 'You are now viewing Assault data.'
@@ -34,8 +37,17 @@ class AustinCrime::CLI
         puts 'You are now viewing DWI data.'
       when "5"
         puts 'You are now viewing Indecent Exposure data.'
+      when "list"
+        list_types
       when "q"
-        puts 'Thank you for visiting. Have a nice day!'
+        cya
       end
     end
+  end
+
+  def cya
+    puts "Come back soon to check out why you SHOULDN'T move here!"
+    abort
+  end
+
 end
