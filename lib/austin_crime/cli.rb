@@ -11,6 +11,7 @@ class AustinCrime::CLI
   end
 
     def list_types
+=begin
       puts <<-DOC
       1. Assault data.
       2. Burglary data.
@@ -18,6 +19,7 @@ class AustinCrime::CLI
       4. DWI data.
       5. Indecent Exposure data.
       DOC
+=end
       @crime = AustinCrime::Crime.all
     end
 
