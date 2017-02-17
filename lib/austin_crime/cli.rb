@@ -21,10 +21,10 @@ class AustinCrime::CLI
     end
 
     def menu
-      puts "Please enter the number of the crime type for more information, or enter 'list' to see your list of options. "
-      puts "You may also enter 'q' to Quit."
       input = nil
-      while input != "exit"
+      while input != "q"
+        puts "Please enter the number of the crime type for more information, or enter 'list' to see your list of options. "
+        puts "You may also enter 'q' to Quit."
         input = gets.strip.downcase
       case input
       when "1"
@@ -41,6 +41,8 @@ class AustinCrime::CLI
         list_types
       when "q"
         cya
+      else
+        puts "Need some help? Type 'list' to see your options or 'q' to quit"
       end
     end
   end
