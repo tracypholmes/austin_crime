@@ -18,6 +18,7 @@ class AustinCrime::CLI
       4. DWI data.
       5. Indecent Exposure data.
       DOC
+      @crime = AustinCrime::Crime.all
     end
 
     def menu
