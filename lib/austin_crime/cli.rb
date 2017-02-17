@@ -20,9 +20,9 @@ class AustinCrime::CLI
       5. Indecent Exposure data.
       DOC
 =end
-      @crime = AustinCrime::Crime.all
-      @crime.each.with_index(1) do |crimes, i|
-        puts "#{i}. #{crimes.type} - #{crimes.increp} - #{crimes.date}"
+      @crimes = AustinCrime::Crime.all
+      @crimes.each.with_index(1) do |crime, i|
+        puts "#{i}. #{crime.type} - #{crime.increp} - #{crime.date}"
       end
     end
 
@@ -35,7 +35,8 @@ class AustinCrime::CLI
         input = gets.strip.downcase
 
       if input.to_i > 0 && input.to_i < 6
-        puts @crime[input.to_i - 1]
+        the_crime = @crimes[input.to_i - 1]
+        puts "#{the_crime.type} - #{the_crime.increp} - #{the_crime.date}"
       elsif input == "list"
         list_types
       elsif input == "q"
