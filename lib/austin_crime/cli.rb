@@ -20,8 +20,22 @@ class AustinCrime::CLI
     end
 
     def menu
-      puts "Please enter the number next to the crime type for more information! "
+      puts "Please enter the number of the crime type for more information. "
       puts "You may also enter 'q' to Quit."
-      crime_types = gets.chomp
+      input = gets.strip
+      case input
+      when "1"
+        puts 'You are now viewing Assault data.'
+      when "2"
+        puts 'You are now viewing Burglary data.'
+      when "3"
+        puts 'You are now viewing Crash data.'
+      when "4"
+        puts 'You are now viewing DWI data.'
+      when "5"
+        puts 'You are now viewing Indecent Exposure data.'
+      when "q"
+        puts 'Thank you for visiting. Have a nice day!'
+      end
     end
 end
