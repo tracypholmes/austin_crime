@@ -21,29 +21,24 @@ class AustinCrime::CLI
       DOC
 =end
       @crime = AustinCrime::Crime.all
+      @crime.each.with_index(1) do |crimes, i|
+        puts "#{i}. #{crimes.type} - #{crimes.increp} - #{crimes.date}"
+      end
     end
 
     def menu
       input = nil
       while input != "q"
-        puts "Please enter the number of the crime type for more information, or enter 'list' to see your list of options. "
+        puts "Please enter the number of the crime type for more information."
+        # or enter 'list' to see your list of options. "
         puts "You may also enter 'q' to Quit."
         input = gets.strip.downcase
-      case input
-      when "1"
-        puts 'You are now viewing Assault data.'
-      when "2"
-        puts 'You are now viewing Burglary data.'
-      when "3"
-        puts 'You are now viewing Crash data.'
-      when "4"
-        puts 'You are now viewing DWI data.'
-      when "5"
-        puts 'You are now viewing Indecent Exposure data.'
-      when "list"
+
+      if input.to_i > 0 && input.to_i < 6
+        puts @crime[input.to_i - 1]
+      elsif input == "list"
         list_types
-      when "q"
-        cya
+      elsif input == "q"
       else
         puts "Need some help? Type 'list' to see your options or 'q' to quit"
       end
