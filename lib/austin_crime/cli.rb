@@ -41,6 +41,12 @@ class AustinCrime::CLI
       case input
       when "1"
         puts AustinCrime::Crime.dwi
+      when "2"
+        puts AustinCrime::Crime.harassment
+      when "3"
+        puts AustinCrime::Crime.cruelty
+      when "4"
+        puts AustinCrime::Crime.theft
       when "q"
         puts "Thanks for visiting. Come again for more reasons NOT TO MOVE TO AUSTIN!"
       when "list"

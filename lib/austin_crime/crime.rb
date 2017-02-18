@@ -19,5 +19,17 @@ class AustinCrime::Crime
     response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='DWI'&$limit=10&$offset=0")
   end
 
+  def self.harassment
+    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='HARASSMENT'&$limit=10&$offset=0")
+  end
+
+  def self.cruelty
+    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='CRUELTY TO ANIMALS'&$limit=10&$offset=0")
+  end
+
+  def self.theft
+    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='THEFT'&$limit=10&$offset=0")
+  end
+
 
 end

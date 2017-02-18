@@ -76,24 +76,27 @@ the user puts in a number and gets a list of the crimes
 
 - A command line interface for for residents to view crime reports.
 
-user types atx-crime
 
-Welcome to ATXCrime!
-
-```
-Please enter the number next to the crime type for more information:
-1. Assault [https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'ASSAULT')&$limit=10&$offset=0]
-[https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'ASSAULT'&$limit=10&$offset=5]
-2. Burglary [https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'BURGLARY')&$limit=10]
-3. Crash
-4. DWI
-5. Indecent Exposure
-```
-  user can type `more` to get more crimes in the list | or previous to see the previous list
-
-  **for purposes of passing the CLI, pick two SPECIFIC crime types that don't require severe filtering or SQL query. Ex: "THEFT", HARASSMENT, "CRASH/LEAVING THE SCENE"
-
-  What is a crime?
+### What is a crime?
   A crime has a crime type
   A crime has a date
   A crime has an incident report number
+
+
+user types austin_crime
+
+Welcome to AustinCrime!
+
+1. DWI
+2. HARASSMENT
+3. CRUELTY TO ANIMALS
+4. THEFT
+5. CRIMINAL MISCHIEF
+
+Please enter the number next to the crime type for more information:
+https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'#{type}')&$limit=10&$offset=0]
+
+Ideally this would show a list of incident_report_number for the specific crime_type
+
+User selects which report number they want to find out more about.
+Or user can type `more` to get more crimes in the list | or previous to see the previous list
