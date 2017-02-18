@@ -6,7 +6,7 @@ class AustinCrime::CLI
   def call
     puts "Welcome to Austin Crime Search!"
     inputs
-    menu
+  #  menu
   #  cya
   end
 
@@ -25,37 +25,25 @@ class AustinCrime::CLI
       puts "\nPlease enter the number of the crime type for more information."
       # or enter 'list' to see your list of options. "
       puts "You may also enter 'q' to Quit."
-      input = gets.strip.downcase
+      input = gets.chomp
       input = input.to_i - 1
-    end
-      type = inputs[input]
 
       # @crimes = AustinCrime::Crime.all
       # @crimes.each.with_index(1) do |crime, i|
       #   puts "#{i}. #{crime.type} - #{crime.increp} - #{crime.date}"
       # end
-    end
+    # end
 
-# Loop for incorrect selection
-    def menu
-      input = nil
-      while input != "q"
-
-      if input.to_i > 0 && input.to_i < 6
-      #  puts "#{the_crime.type} - #{the_crime.increp} - #{the_crime.date}"
-      elsif input == "list"
-        inputs
-      elsif input == "q"
-        cya
-      else
+    if input == "q"
+      cya
+    elsif input == "list"
+      inputs
+      while input.to_i < 0 && input.to_i > 6
         puts "Need some help? Type 'list' to see your options."
+        input = gets.chomp
+        input = input.to_i - 1
       end
+      type = types[input]
     end
   end
-
-  def cya
-    puts "Come back soon to check out why you SHOULDN'T move here!"
-    abort
-  end
-
 end
