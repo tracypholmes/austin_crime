@@ -37,7 +37,7 @@ class AustinCrime::CLI
         # puts "You may also enter 'q' to Quit."
         input = gets.strip.downcase
       if input.to_i > 0 && input.to_i < 6
-        puts "finally"
+        puts AustinCrime::Crime.all
       elsif input == "list"
         inputs
       else

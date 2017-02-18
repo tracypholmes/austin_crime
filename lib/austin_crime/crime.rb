@@ -8,10 +8,9 @@ class AustinCrime::Crime
     self.url
   end
 
-  def self.url(type)
-    url = "https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'#{type}')"
-    response = HTTParty.get(url)
-    @type_hash = response.parsed_response
+  def self.url
+    response = HTTParty.get('https://data.austintexas.gov/resource/rkrg-9tez.json')
+    puts response.body
   end
 
 
