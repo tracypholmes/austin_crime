@@ -41,8 +41,10 @@ class AustinCrime::CLI
       case input
       when "1"
         puts AustinCrime::Crime.dwi
-      # elsif input == "list"
-      #   inputs
+      when "q"
+        puts "Thanks for visiting. Come again for more reasons NOT TO MOVE TO AUSTIN!"
+      when "list"
+        inputs
       else
         puts "Need some help? Type 'list' to see your options or 'q' to quit."
       end
