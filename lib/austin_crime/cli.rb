@@ -5,13 +5,14 @@ class AustinCrime::CLI
 
   def call
     puts "Welcome to Austin Crime Search!"
-    list_types
+    inputs
     menu
     cya
   end
 
-    def list_types
-=begin
+    def inputs
+      types = ["Assault", "Burglary", "Crash", "Theft", "Indecent Exposure"]
+
       puts <<-DOC
       1. Assault data.
       2. Burglary data.
@@ -19,11 +20,11 @@ class AustinCrime::CLI
       4. DWI data.
       5. Indecent Exposure data.
       DOC
-=end
-      @crimes = AustinCrime::Crime.all
-      @crimes.each.with_index(1) do |crime, i|
-        puts "#{i}. #{crime.type} - #{crime.increp} - #{crime.date}"
-      end
+
+      # @crimes = AustinCrime::Crime.all
+      # @crimes.each.with_index(1) do |crime, i|
+      #   puts "#{i}. #{crime.type} - #{crime.increp} - #{crime.date}"
+      # end
     end
 
     def menu
@@ -38,7 +39,7 @@ class AustinCrime::CLI
         the_crime = @crimes[input.to_i - 1]
         puts "#{the_crime.type} - #{the_crime.increp} - #{the_crime.date}"
       elsif input == "list"
-        list_types
+        inputs
       elsif input == "q"
       else
         puts "Need some help? Type 'list' to see your options or 'q' to quit"

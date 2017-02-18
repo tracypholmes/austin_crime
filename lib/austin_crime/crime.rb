@@ -1,3 +1,6 @@
+require 'httparty'
+require 'pry'
+
 class AustinCrime::Crime
   attr_accessor :type, :type_hash, :date, :increp, :url
   def self.all
