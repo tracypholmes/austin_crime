@@ -11,14 +11,15 @@ class AustinCrime::CLI
   end
 
     def inputs
-      types = ["Assault", "Burglary", "Crash", "Theft", "Indecent Exposure"]
+      types = ["ASSAULT", "BURGLARY", "CRASH", "THEFT", "DRIVING"]
 
+ # Select type of crime to view
       puts <<-DOC
-      1. Assault data
-      2. Burglary data
-      3. Crash data
-      4. THEFT data
-      5. Indecent Exposure data.
+      1. ASSAULT
+      2. BURGLARY
+      3. CRASH
+      4. THEFT
+      5. DRIVING
       DOC
 
       # @crimes = AustinCrime::Crime.all
@@ -27,23 +28,26 @@ class AustinCrime::CLI
       # end
     end
 
+# Loop for incorrect selection
     def menu
       input = nil
       while input != "q"
-        puts "Please enter the number of the crime type for more information."
+        puts "\nPlease enter the number of the crime type for more information."
         # or enter 'list' to see your list of options. "
         puts "You may also enter 'q' to Quit."
         input = gets.strip.downcase
+        input = input.to_i - 1
 
       if input.to_i > 0 && input.to_i < 6
-        the_crime = @crimes[input.to_i - 1]
-        puts "#{the_crime.type} - #{the_crime.increp} - #{the_crime.date}"
+      #  puts "#{the_crime.type} - #{the_crime.increp} - #{the_crime.date}"
       elsif input == "list"
         inputs
       elsif input == "q"
+        cya
       else
-        puts "Need some help? Type 'list' to see your options or 'q' to quit"
+        puts "Need some help? Type 'list' to see your options."
       end
+    #  type = inputs[input]
     end
   end
 
