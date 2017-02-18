@@ -14,10 +14,10 @@ class AustinCrime::CLI
       types = ["Assault", "Burglary", "Crash", "Theft", "Indecent Exposure"]
 
       puts <<-DOC
-      1. Assault data.
-      2. Burglary data.
-      3. Crash data.
-      4. DWI data.
+      1. Assault data
+      2. Burglary data
+      3. Crash data
+      4. THEFT data
       5. Indecent Exposure data.
       DOC
 
