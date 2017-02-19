@@ -54,6 +54,7 @@ class AustinCrime::CLI
       else
         puts "Need some help? Type 'list' to see your options or 'q' to quit."
       end
+    
     end
   end
 end

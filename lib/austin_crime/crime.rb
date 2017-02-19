@@ -16,20 +16,29 @@ class AustinCrime::Crime
   def initialize; end
 
   def self.dwi
-    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='DWI'&$limit=10&$offset=0")
+    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='DWI'")
+    puts "Got #{response.count} results. Dumping first results:"
+    response.first.each do |k, v|
+      puts "#{k}: #{v}"
+    end
   end
 
   def self.harassment
-    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='HARASSMENT'&$limit=10&$offset=0")
+    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='HARASSMENT'")
+
   end
 
   def self.cruelty
-    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='CRUELTY TO ANIMALS'&$limit=10&$offset=0")
+    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='CRUELTY TO ANIMALS'")
   end
 
   def self.theft
-    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='THEFT'&$limit=10&$offset=0")
+    response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='THEFT'")
   end
 
-
+  # def self.incident
+  #   puts "\nPlease enter an Incident Report Number for more info"
+  #   number = ""
+  #   response =     HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?incident_report_number='#{number}")
+  # end
 end
