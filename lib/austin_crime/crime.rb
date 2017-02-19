@@ -21,7 +21,17 @@ class AustinCrime::Crime
     response.first.each do |k, v|
       puts "#{k}: #{v}"
     end
+    puts "enter 'more' if you'd like to browse more entries or 'menu' if you'd like to start over"
+    input = gets.chomp
+    if input == "more"
+      puts HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='DWI'&$limit=10&$offset=1")
+    elsif input == "menu"
+      AustinCrime::CLI.inputs
+    else
+      puts "Not sure what you want. Please try again."
+    end
   end
+
 
   def self.harassment
     response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type='HARASSMENT'")

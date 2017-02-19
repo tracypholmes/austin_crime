@@ -97,7 +97,7 @@ Please enter the number next to the crime type for more information:
 https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'#{type}')&$limit=10&$offset=0]
 
 Ideally this would show a list of incident_report_number for the specific crime_type
-https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type=%27THEFT%27&$where=starts_with(incident_report_number,%272016%27)&$limit=10&$offset=0
+https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type=" "&$limit=5&$offset=5
 # HOW DO I SHOW JUST THE DAMN IRN for crime_type?!
 User selects which report number they want to find out more about.
 Or user can type `more` to get more crimes in the list | or previous to see the previous list

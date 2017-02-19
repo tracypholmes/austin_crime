@@ -1,3 +1,4 @@
+require 'httparty'
 
 class AustinCrime::CLI
 
@@ -32,9 +33,8 @@ class AustinCrime::CLI
     def menu
       input = nil
       while input != "q"
-        puts "\nPlease enter the number of the crime type for more information."
-        # or enter 'list' to see your list of options. "
-        # puts "You may also enter 'q' to Quit."
+        puts "\nPlease enter the number of the crime type for more information. Or enter 'list' to see your list of options."
+        puts "You may also enter 'q' to Quit."
         input = gets.strip.downcase
       # if input.to_i > 0 && input.to_i < 6
       #   puts AustinCrime::Crime.all
@@ -54,7 +54,7 @@ class AustinCrime::CLI
       else
         puts "Need some help? Type 'list' to see your options or 'q' to quit."
       end
-    
+
     end
   end
 end
