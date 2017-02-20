@@ -12,7 +12,7 @@ class AustinCrime::CLI
   end
 
     def inputs
-      types = ["DWI", "HARASSMENT", "CRUELTY TO ANIMALS", "THEFT", "CRIMINAL MISCHIEF"]
+  # ['DWI', 'HARASSMENT', 'CRUELTY TO ANIMALS', 'THEFT']
 
  # Select type of crime to view
       puts <<-DOC
@@ -20,7 +20,6 @@ class AustinCrime::CLI
       2. HARASSMENT
       3. CRUELTY TO ANIMALS
       4. THEFT
-      5. CRIMINAL MISCHIEF
       DOC
 
 
@@ -28,7 +27,7 @@ class AustinCrime::CLI
       # @crimes.each.with_index(1) do |crime, i|
       #   puts "#{i}. #{crime.type} - #{crime.increp} - #{crime.date}"
       # end
-     end
+    end
 
     def menu
       input = nil
@@ -36,7 +35,7 @@ class AustinCrime::CLI
         puts "\nPlease enter the number of the crime type for more information. Or enter 'list' to see your list of options."
         puts "You may also enter 'q' to Quit."
         input = gets.strip.downcase
-      # if input.to_i > 0 && input.to_i < 6
+      # if input.to_i > 0 && input.to_i < 5
       #   puts AustinCrime::Crime.all
       case input
       when "1"
@@ -54,7 +53,6 @@ class AustinCrime::CLI
       else
         puts "Need some help? Type 'list' to see your options or 'q' to quit."
       end
-
     end
   end
 end

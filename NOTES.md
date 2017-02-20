@@ -101,3 +101,30 @@ https://data.austintexas.gov/resource/rkrg-9tez.json?crime_type=" "&$limit=5&$of
 # HOW DO I SHOW JUST THE DAMN IRN for crime_type?!
 User selects which report number they want to find out more about.
 Or user can type `more` to get more crimes in the list | or previous to see the previous list
+
+John Verdone [21:00] 
+You also probably don't need to do response =
+
+Tracy Holmes [21:00] 
+ahhh ok. I don't think I did it at the bottom. But i'm not using it to really store anything, so no reason to have it. :taking notes:
+
+John Verdone [21:02] 
+and a little *wink wink*.
+
+[21:02]  
+Store the information into objects.
+
+[21:03]  
+might save yourself a refactor step upon review.
+
+Tracy Holmes [21:03] 
+!!
+
+[21:03]  
+Okies!
+
+John Verdone [21:04] 
+It's a little inside info from the feed back I got from luke from my project.
+
+Tracy Holmes [21:05] 
+Thanks, John! I appreciate that
