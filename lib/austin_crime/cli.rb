@@ -1,7 +1,9 @@
 require 'httparty'
 
 class AustinCrime::CLI
-  def initialize; end
+  def initialize
+  #  @inputs = inputs
+  end
 
   def call
     puts 'Welcome to Austin Crime Search!'
@@ -11,6 +13,7 @@ class AustinCrime::CLI
   end
 
   def inputs
+  #  inputs = ['DWI', 'HARASSMENT', 'CRUELTY TO ANIMALS', 'THEFT']
     # Select type of crime to view
     puts <<-DOC
     1. DWI
