@@ -26,7 +26,7 @@ class AustinCrime::CLI
   end
 
   def menu
-    input = nil
+    input = 'nil'
     while input != 'q'
       puts "\nPlease enter the number of the crime type for more information. Or enter 'list' to see your list of options."
       puts "You may also enter 'q' to Quit."
