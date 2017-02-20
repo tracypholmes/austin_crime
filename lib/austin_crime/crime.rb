@@ -18,6 +18,7 @@ class AustinCrime::Crime
         hash.collect do |k, v|
           puts "#{k}: #{v}"
         end
+            puts "asshole"
       end
     elsif input == 'menu'
       AustinCrime::CLI.inputs
