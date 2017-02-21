@@ -1,8 +1,6 @@
 # AustinCrime
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/austin_crime`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+CLI gem that allows users to view Austin crime reports by crime type.
 
 ## Installation
 
@@ -20,9 +18,13 @@ Or install it yourself as:
 
     $ gem install austin_crime
 
+Run from terminal with:
+
+    austin_crime
+
 ## Usage
 
-TODO: Write usage instructions here
+Run the gem and the program will provide you with 5 crime types. You can then type the number of the type you want to read more about and the terminal will display the one full result. If you want to view more, you can type 'more', and it will show you 10 full crimes. You can also type "List" to display the list of types again,  or "q" to quit the program.
 
 ## Development
 
@@ -38,4 +40,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Tracy 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
