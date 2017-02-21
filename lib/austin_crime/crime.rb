@@ -6,8 +6,12 @@ class AustinCrime::Crime
     @response = response
   end
 
+  def self.url
+    url = "https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,"
+  end
+
   def self.dwi
-    @response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'DWI')&$limit=10")
+    @response = HTTParty.get(url + "'DWI')&$limit=10")
     yeesh
   end
 
