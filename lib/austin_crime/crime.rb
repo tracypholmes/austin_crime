@@ -16,17 +16,17 @@ class AustinCrime::Crime
   end
 
   def self.harassment
-    @response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'HARASSMENT')&$limit=10")
+    @response = HTTParty.get(url + "'HARASSMENT')&$limit=10")
     yeesh
   end
 
   def self.cruelty
-    @response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'CRUELTY TO ANIMALS')&$limit=10")
+    @response = HTTParty.get(url + "'CRUELTY TO ANIMALS')&$limit=10")
     yeesh
   end
 
   def self.theft
-    @response = HTTParty.get("https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'THEFT')&$limit=10")
+    @response = HTTParty.get(url + "'THEFT')&$limit=10")
     yeesh
   end
 
