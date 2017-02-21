@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email         = ["tracypholmes@gmail.com"]
 
   s.summary       = %q{Simple command line tool to view Austin crime stats.}
-  s.description   = %q{Simple command line tool to view Austin crime stats.}
+  s.description   = %q{View crime reports on specific crime types!}
   s.homepage      = "https://github.com/tracypholmes/austin_crime"
   s.license       = "MIT"
 
@@ -22,8 +22,8 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
 
-  s.add_dependency 'thor'
-  s.add_dependency 'httparty'
+  s.add_dependency  'thor', '~> 0'
+  s.add_dependency 'httparty', '~> 0'
 
   s.add_development_dependency "bundler", "~> 1.14"
   s.add_development_dependency "pry", "~> 0.10"
