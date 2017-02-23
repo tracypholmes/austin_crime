@@ -35,7 +35,7 @@ class AustinCrime::Crime
     @response.first.each do |k, v|
       puts "#{k}: #{v}"
     end
-    puts "\nEnter 'more' if you'd like to browse more entries or 'menu' if you'd like to start over"
+    puts "\nEnter 'more' if you'd like to browse more entries or 'q' if you'd like Quit"
     input = gets.chomp
     if input == 'more'
       @response.collect do |hash|
@@ -44,8 +44,9 @@ class AustinCrime::Crime
           puts "#{k}: #{v}"
         end.compact.reject(&:empty?) # c_cole on the assist
       end
-    elsif input == 'menu'
-      AustinCrime::CLI
+    elsif input == 'q'
+      puts "But you just got here! Thanks for viewing."
+      abort
     else
       puts 'Not sure what you want. Please try again.'
     end
