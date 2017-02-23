@@ -1,13 +1,13 @@
 require 'httparty'
 require 'pry'
-
+# this is the core of my scraper - json lives here
 class AustinCrime::Crime
   def initialize
     @response = response
   end
 
   def self.url
-    url = "https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,"
+    url = 'https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'
   end
 
   def self.dwi
@@ -40,12 +40,12 @@ class AustinCrime::Crime
     if input == 'more'
       @response.collect do |hash|
         puts '--------------------'
-        hash.collect do |k, v|  # not supposed to use collect on hashes?
+        hash.collect do |k, v| # not supposed to use collect on hashes?
           puts "#{k}: #{v}"
         end.compact.reject(&:empty?) # c_cole on the assist
       end
     elsif input == 'menu'
-      AustinCrime::CLI.inputs
+      AustinCrime::CLI
     else
       puts 'Not sure what you want. Please try again.'
     end

@@ -1,9 +1,7 @@
 require 'httparty'
-
+# this is my controller
 class AustinCrime::CLI
-  def initialize
-  #  @inputs = inputs
-  end
+  def initialize; end
 
   def call
     puts 'Welcome to Austin Crime Search!'
@@ -13,7 +11,6 @@ class AustinCrime::CLI
   end
 
   def inputs
-  #  inputs = ['DWI', 'HARASSMENT', 'CRUELTY TO ANIMALS', 'THEFT']
     # Select type of crime to view
     puts <<-DOC
     1. DWI
@@ -34,7 +31,7 @@ class AustinCrime::CLI
       puts "\nPlease enter the number of the crime type for more information. Or enter 'list' to see your list of options."
       puts "You may also enter 'q' to Quit."
       input = gets.strip.downcase
-    # if input.to_i > 0 && input.to_i < 5
+      # if input.to_i > 0 && input.to_i < 5
       # puts AustinCrime::Crime.all
       case input
       when '1'
