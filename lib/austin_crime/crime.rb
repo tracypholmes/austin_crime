@@ -2,16 +2,32 @@ require 'httparty'
 require 'pry'
 # this is the core of my scraper - json lives here
 class AustinCrime::Crime
-  def initialize
-    @response = response
+  attr_accessor :address, :date, :incident_report_number
+
+  @@all = []
+
+  def initialize(address, date, number)
+    @address = address
+    @date = date
+    @incident_report_number = number
+    @@all << self
+    # @response = response
   end
 
+  def self.all
+    @@all
+  end
+
+  def self.clear
+    #reset @@all to empty array
+  end
   def self.url
     url = 'https://data.austintexas.gov/resource/rkrg-9tez.json?$where=starts_with(crime_type,'
   end
 
   def self.dwi
     @response = HTTParty.get(url + "'DWI')&$limit=10")
+    binding.pry
     yeesh
   end
 
