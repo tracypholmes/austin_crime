@@ -35,7 +35,8 @@ class AustinCrime::CLI
       # puts AustinCrime::Crime.all
       case input
       when '1'
-        puts AustinCrime::Crime.dwi
+        AustinCrime::Api.dwi_api
+        dwi_crimes = AustinCrime::Crime.all
       when '2'
         puts AustinCrime::Crime.harassment
       when '3'
