@@ -1,6 +1,10 @@
 # AustinCrime
 
-CLI gem that allows users to view Austin crime reports by crime type.
+CLI gem that allows users to view Austin crime reports by crime type. There's a running (somewhat truthful) joke about too many people moving to Austin. So, I decided to do my first official Flatiron project based on that. I figured if I could write a gem showing how much crime we **actually** have, I could deter prospective citizens!
+
+## Thoughts
+
+This was my first fully blank slate project since starting bootcamp, though not my first gem (that was TicTacToe with AI). I was extremely nervous about it - Object Oriented Ruby = a thorn in my side. I understood it, just couldn't explain it very well. But I was able to show I knew what I was doing and ultimately pass my first assessment. This was also the first time I started feeling like a "real" developer. 
 
 ## Installation
 
